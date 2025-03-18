@@ -108,14 +108,22 @@ export default function App() {
     const numericAmount = parseFloat(rawAmount);
     if (isNaN(numericAmount)) return;
 
-    const newHistory = toCurrencies.map((toCurrency) => ({
-      id: `${Date.now()}-${Math.random()}`,
-      fromCurrency,
-      toCurrency,
-      amount: numericAmount,
-      result: convertCurrency(numericAmount, rates[toCurrency]),
-      timestamp: new Date(),
-    }));
+    const newHistory = toCurrencies.map((toCurrency) => {
+      // Skip conversion if currencies are the same
+      const conversionRate = fromCurrency === toCurrency ? 1 : rates[toCurrency];
+      
+      // Format the result properly with the target currency
+      const convertedAmount = convertCurrency(numericAmount, conversionRate);
+      
+      return {
+        id: `${Date.now()}-${Math.random()}`,
+        fromCurrency,
+        toCurrency,
+        amount: numericAmount,
+        result: convertedAmount,
+        timestamp: new Date(),
+      };
+    });
 
     setHistory((prev) => {
       const updatedHistory = [...newHistory, ...prev];
@@ -172,7 +180,11 @@ export default function App() {
               </div>
               <CurrencySelect
                 value={fromCurrency}
-                onChange={setFromCurrency}
+                onChange={(value) => {
+                  // When from currency changes, remove it from target currencies if present
+                  setFromCurrency(value);
+                  setToCurrencies(prev => prev.filter(curr => curr !== value));
+                }}
                 currencies={CURRENCIES}
                 label="From"
               />
@@ -185,13 +197,16 @@ export default function App() {
               >
                 <CurrencySelect
                   value={toCurrency}
-                  onChange={(value) =>
+                  onChange={(value) => {
+                    // Make sure we don't select the from currency
+                    if (value === fromCurrency) return;
+                    
                     setToCurrencies((prev) =>
                       prev.map((c, i) => (i === index ? value : c))
-                    )
-                  }
+                    );
+                  }}
                   currencies={CURRENCIES.filter(
-                    (c) => c.code !== fromCurrency
+                    (c) => c.code !== fromCurrency && !toCurrencies.includes(c.code) || c.code === toCurrency
                   )}
                   label="To"
                 />
