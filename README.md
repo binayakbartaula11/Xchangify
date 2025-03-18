@@ -1,7 +1,7 @@
 # Xchangify - Currency Converter App 🚀
 Xchangify is a fast, intuitive currency converter app offering real-time rates and smooth conversions. With a sleek, responsive design, it ensures a seamless experience for travelers and businesses, keeping you up-to-date with dynamic currency changes. Transform your currency handling with Xchangify!
 
-This is a [React](https://reactjs.org/) project created with [Vite](https://vitejs.dev/), leveraging the power of [TypeScript](https://www.typescriptlang.org/) to deliver a fast, modern, and type-safe currency conversion experience.
+This is a [React](https://reactjs.org/) project created with [Next.js](https://nextjs.org), leveraging the power of [TypeScript](https://www.typescriptlang.org/) to deliver a fast, modern, and type-safe currency conversion experience.
 
 ## Key Features of **Xchangify**
 
@@ -82,10 +82,10 @@ cd Xchangify
 
 ### 2. Install Essential Dependencies
 
-Install the core dependencies for React and TypeScript:
+Install the core dependencies for React, Next.js, and TypeScript:
 
 ```bash
-npm install react react-dom typescript
+npm install next react react-dom typescript
 ```
 
 For Vite: Install the Vite build tool and the necessary React plugin:
@@ -202,24 +202,36 @@ npm run reset
 
 This will move the current code to a backup folder (src-example) and create a new, empty src directory, providing you with a clean slate to begin fresh development. Alternatively, if you'd like to create a new project, follow these steps:
 
-**Vite Setup:**
+### Option 1: Next.js Setup
+Run the following command to create a new Next.js project:
+```bash
+npx create-next-app@latest Xchangify
+```
+For TypeScript setup:
+```bash
+npx create-next-app@latest Xchangify --typescript
+```
+**During Setup**:
+- Project Name: Choose a name for your project (e.g., Xchangify).
+- Package Manager: Select npm, yarn, or pnpm based on your preference.
 
+Navigate to the project directory:
+```bash
+cd Xchangify
+```
+### Option 2: Vite Setup
 To create a new Vite project with React and TypeScript:
-
 ```bash
 npm create vite@latest Xchangify --template react-ts
 ```
-
 **During Setup**:
 - Project Name: Specify a name for your project (e.g., Xchangify).
 - Package Manager: Select react-ts for a React project with TypeScript.
 
-Navigate to the project directory:
-
+Navigate to the Vite project directory:
 ```bash
 cd Xchangify
 ```
-
 ---
 
 ## Key Features
@@ -242,8 +254,10 @@ Ready to simplify your currency conversions? Check out the live version of **Xch
 For in-depth knowledge and guides on TypeScript and React with TypeScript, refer to the following resources:
 
 - **[Vite Documentation](https://vite.dev/)**: Explore the core concepts of Vite, its features, and advanced configurations for React and TypeScript projects.
+- **[Next.js Documentation](https://nextjs.org/docs)**: Learn about SSR, static site generation, API routes, and TypeScript integration in Next.js.
 - **[React Documentation](https://reactjs.org/docs/getting-started.html)**: Learn how to build interactive UIs using React, including guides on how to integrate TypeScript effectively.
 - **[TypeScript Documentation](https://www.typescriptlang.org/docs/)**: Official documentation for TypeScript, including setup, features, and advanced topics like type inference and generics.
+- **[Next.js + TypeScript Template](https://github.com/vercel/next.js/tree/canary/examples/with-typescript)**: Get started with Next.js and TypeScript in one easy setup.
 - **[Vite + React Template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react)**: Discover how Vite integrates with React, along with TypeScript support, and how it improves the development experience.
 
 ---
@@ -253,9 +267,11 @@ For in-depth knowledge and guides on TypeScript and React with TypeScript, refer
 Explore these communities and get involved in the broader ecosystem of TypeScript, Vite, and React development:
 
 - **[Vite GitHub Repository](https://github.com/vitejs/vite)**: Explore the open-source Vite repository, contribute, and learn from the broader community.
+- **[Next.js GitHub Repository](https://github.com/vercel/next.js)**: Engage with the Next.js community and learn about TypeScript integration.
 - **[React GitHub Repository](https://github.com/facebook/react)**: The source code for React, including discussions on TypeScript usage and integration with React projects.
 - **[TypeScript GitHub Repository](https://github.com/Microsoft/TypeScript)**: Access the source code and contribute to TypeScript's development. Find discussions and resources on TypeScript features, updates, and best practices.
 - **[Vite Discord](https://discord.com/invite/vitejs)**: Join the Vite Discord server for discussions, help, and sharing knowledge about Vite and its ecosystem.
+- *[Next.js Discord](https://discord.com/invite/nextjs)**: Engage with the Next.js community for support.
 - **[React Community Support](https://reactjs.org/community/support.html)**: Access resources and channels for React-related support, including TypeScript-specific help.
 - **[TypeScript Community](https://www.typescriptlang.org/community)**: Find resources, events, and forums dedicated to TypeScript discussions and support.
 
