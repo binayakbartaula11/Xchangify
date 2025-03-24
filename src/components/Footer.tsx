@@ -33,9 +33,9 @@ export function Footer() {
   ];
 
   return (
-    <footer className="w-full mt-8 bg-gradient-to-b from-transparent to-gray-900/90 backdrop-blur-sm relative">
+    <footer className="w-full mt-8 bg-gradient-to-b from-transparent to-blue-900/90 backdrop-blur-sm relative">
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-blue-950/80 to-transparent pointer-events-none" />
 
       <div className="container mx-auto px-4 py-16 relative z-10">
         {/* Quote Section */}
@@ -73,7 +73,7 @@ export function Footer() {
             © {new Date().getFullYear()} Xchangify. All rights reserved.
           </p>
           <p className="mt-1 text-white/50">
-            Where boundaries dissolve and the world’s wealth connects.
+            Where boundaries dissolve and the world's wealth connects.
           </p>
         </div>
       </div>
